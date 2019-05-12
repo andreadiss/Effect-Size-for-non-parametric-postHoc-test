@@ -1,11 +1,16 @@
-# Questo script calcola nelle prime due tavole il p.value (Holm's correction) e la statistica W
-# la terza tavola è il prodotto n1*n2, la quarta rappresenta la probabilità di superiorità (PS) e la quinta tavola l'effect size per la statistica U
+# -------------------------------------------------------------------------------------------------------------------------------------------------------#
+# In this script I changed the original pairwise.wilcox.test function to compute two indices of the effect size for the Wilcox test (and Mann-Whitney U)
+# for repeated comparisons. The two indices are based on the Probability Superiority and the U standardization procedures. General reference to the two procedures
+# can be find in the book: Effect sizes for research by Krissom and Kim.
 
-# inserire la VD, la variabile gruppo e N del campione
+# The first two tables represent the U statistic and the p-value - Holm corrected - per comparisons.
+# The third table represent the the denominator of the Probability of Superiority index (namely na*nb).
+# The fourth table is the Probability of superiority index.
+# The fifth table is the r index computed after standardizing the U statistics.
+#
+# The arguments of the pairwise2.wilcox.test are: x = DV, g = group variable, n = sample size
+# -------------------------------------------------------------------------------------------------------------------------------------------------------#
 
-# DCSF:per analisi
-# library(PMCMRplus)
-# dscfAllPairsTest(x, g)
 
 pairwise2.table<-function (funct, level.names)
 {
